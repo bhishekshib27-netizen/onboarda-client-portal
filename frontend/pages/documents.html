@@ -1,1 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Onboarda — KYC Documents</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/portal.css" />
+</head>
 
+<body class="portal-body">
+  <div class="portal-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="portal-sidebar">
+      <a href="./index.html" class="brand brand-light sidebar-brand">
+        <div class="brand-mark">O</div>
+        <div class="brand-text">
+          <span class="brand-name">Onboarda</span>
+          <span class="brand-sub">Client Onboarding Portal</span>
+        </div>
+      </a>
+
+      <div class="sidebar-group">
+        <span class="sidebar-label">Navigation</span>
+        <nav class="sidebar-nav">
+          <a href="./dashboard.html" class="sidebar-link">🏠 Dashboard</a>
+          <a href="./documents.html" class="sidebar-link active">📄 KYC Documents</a>
+        </nav>
+      </div>
+
+      <div class="sidebar-group">
+        <span class="sidebar-label">My Applications</span>
+        <nav class="sidebar-nav">
+          <a href="./signup.html" class="sidebar-link">➕ New Application</a>
+          <a href="./dashboard.html" class="sidebar-link">🔍 Track by Reference</a>
+        </nav>
+      </div>
+
+      <div class="sidebar-group">
+        <span class="sidebar-label">Account</span>
+        <nav class="sidebar-nav">
+          <a href="#" class="sidebar-link">🔐 Security</a>
+          <a href="./index.html" class="sidebar-link">↩ Sign Out</a>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="portal-main">
+
+      <!-- HEADER -->
+      <header class="portal-header">
+        <div>
+          <p class="portal-welcome">FinRisk Insights</p>
+          <h1>KYC & Document Submission</h1>
+          <p class="portal-subtext">
+            Upload required documents. AI will verify authenticity and consistency.
+          </p>
+        </div>
+      </header>
+
+      <!-- PROGRESS -->
+      <section class="progress-card">
+        <div class="progress-top">
+          <span>Overall Completion</span>
+          <strong>0%</strong>
+        </div>
+
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 0%;"></div>
+        </div>
+
+        <div class="stepper-row">
+          <div class="step-item done">
+            <span class="step-bullet">✓</span>
+            <span>Pre-Screening</span>
+          </div>
+          <div class="step-item done">
+            <span class="step-bullet">✓</span>
+            <span>Risk Profiling</span>
+          </div>
+          <div class="step-item active">
+            <span class="step-bullet">3</span>
+            <span>KYC & Documents</span>
+          </div>
+          <div class="step-item">
+            <span class="step-bullet">4</span>
+            <span>Approved</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION A -->
+      <section class="content-card">
+        <div class="card-header">
+          <div>
+            <h2>🏢 A — Corporate Entity Documents</h2>
+            <p>Documents establishing the legal existence of your entity</p>
+          </div>
+        </div>
+
+        <div class="upload-grid">
+
+          <!-- CERTIFICATE -->
+          <div class="upload-card">
+            <h3>Certificate of Incorporation</h3>
+            <p>Official incorporation certificate from registry</p>
+
+            <input type="file" />
+            <div class="ai-status success">✔ Verified · 98%</div>
+          </div>
+
+          <!-- MOA -->
+          <div class="upload-card">
+            <h3>Memorandum of Association</h3>
+            <p>Constitution / M&A of the entity</p>
+
+            <input type="file" />
+            <div class="ai-status success">✔ Detected · 95%</div>
+          </div>
+
+          <!-- SHAREHOLDERS -->
+          <div class="upload-card">
+            <h3>Shareholder Register</h3>
+            <p>Full list of shareholders & ownership</p>
+
+            <input type="file" />
+            <div class="ai-status warning">⚠ Needs review</div>
+          </div>
+
+          <!-- DIRECTORS -->
+          <div class="upload-card">
+            <h3>Register of Directors</h3>
+            <p>Official list of directors</p>
+
+            <input type="file" />
+            <div class="ai-status pending">Pending</div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECTION B -->
+      <section class="content-card">
+        <div class="card-header">
+          <div>
+            <h2>👤 B — Directors & UBOs</h2>
+            <p>Upload identity documents for each director and UBO</p>
+          </div>
+        </div>
+
+        <!-- PERSON CARD -->
+        <div class="ubo-card">
+
+          <div class="ubo-header">
+            <div>
+              <h3>Bhishek Shibdeen</h3>
+              <span class="status-chip warning">Pending</span>
+            </div>
+
+            <div class="ubo-meta">
+              <span>Director</span>
+              <span>UBO</span>
+              <span>100%</span>
+            </div>
+          </div>
+
+          <div class="upload-grid">
+
+            <div class="upload-card">
+              <h4>Passport / ID</h4>
+              <input type="file" />
+              <div class="ai-status success">✔ Extracted</div>
+            </div>
+
+            <div class="upload-card">
+              <h4>Proof of Address</h4>
+              <input type="file" />
+              <div class="ai-status warning">⚠ Address mismatch</div>
+            </div>
+
+            <div class="upload-card">
+              <h4>CV / LinkedIn</h4>
+              <input type="file" />
+              <div class="ai-status pending">Pending</div>
+            </div>
+
+          </div>
+
+        </div>
+          <div class="ubo-actions">
+            <button class="btn btn-secondary btn-sm" type="button">📎 Upload Documents</button>
+            <button class="btn btn-primary btn-sm" type="button">📧 Send Self-Submission Link</button>
+          </div>
+        </div>
+
+        <button class="btn btn-secondary add-person-btn" type="button">+ Add Another Director / UBO</button>
+      </section>
+
+      <!-- SECTION C -->
+      <section class="content-card">
+        <div class="card-header">
+          <div>
+            <h2>📄 C — Business Operating Documents</h2>
+            <p>Optional supporting evidence of business activity and operations</p>
+          </div>
+        </div>
+
+        <div class="info-banner muted">
+          <p>
+            All documents in this section are optional. You can proceed to submission without
+            uploading any of these, but providing them may speed up your compliance review.
+          </p>
+        </div>
+
+        <div class="upload-grid">
+          <div class="upload-card">
+            <h3>Sample Contracts / Agreements</h3>
+            <p>Client or supplier contracts evidencing business activity</p>
+            <input type="file" multiple />
+            <div class="ai-status pending">Optional</div>
+          </div>
+
+          <div class="upload-card">
+            <h3>AML / CFT Policy</h3>
+            <p>Entity’s internal AML / CFT compliance policy, if regulated</p>
+            <input type="file" multiple />
+            <div class="ai-status pending">Optional</div>
+          </div>
+
+          <div class="upload-card">
+            <h3>Website / Marketing Materials</h3>
+            <p>Evidence of products, services, and public business profile</p>
+            <input type="file" multiple />
+            <div class="ai-status pending">Optional</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION D -->
+      <section class="content-card">
+        <div class="card-header">
+          <div>
+            <h2>📂 D — Other Documents</h2>
+            <p>Upload any additional supporting documents not covered above</p>
+          </div>
+        </div>
+
+        <div class="info-banner muted">
+          <p>
+            Use this section for any other relevant materials, including legal opinions,
+            compliance certifications, source-of-funds support, or additional corporate records.
+          </p>
+        </div>
+
+        <div class="other-docs-box">
+          <div class="upload-card wide-upload-card">
+            <h3>Additional Supporting Documents</h3>
+            <p>Drag and drop files here or use the uploader below</p>
+            <input type="file" multiple />
+            <div class="ai-status pending">No files uploaded yet</div>
+          </div>
+        </div>
+
+        <button class="btn btn-secondary add-person-btn" type="button">+ Add Document</button>
+      </section>
+
+      <!-- AI REVIEW PANEL -->
+      <section class="content-grid lower-grid">
+        <div class="content-card">
+          <div class="card-header">
+            <div>
+              <span class="eyebrow">AI Verification</span>
+              <h2>Document Review Signals</h2>
+            </div>
+          </div>
+
+          <div class="signal-list">
+            <div class="signal-item">
+              <div>
+                <strong>Certificate of Incorporation</strong>
+                <p>Registry format detected and company name matched</p>
+              </div>
+              <span class="status-chip success">98%</span>
+            </div>
+
+            <div class="signal-item">
+              <div>
+                <strong>Passport / Government ID</strong>
+                <p>Name and DOB extracted successfully</p>
+              </div>
+              <span class="status-chip success">95%</span>
+            </div>
+
+            <div class="signal-item">
+              <div>
+                <strong>Proof of Address</strong>
+                <p>Address differs from profile declaration</p>
+              </div>
+              <span class="status-chip warning">Review</span>
+            </div>
+
+            <div class="signal-item">
+              <div>
+                <strong>Ownership Structure</strong>
+                <p>Cross-check pending against shareholder register</p>
+              </div>
+              <span class="status-chip muted">Pending</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <div class="card-header">
+            <div>
+              <span class="eyebrow">Completion</span>
+              <h2>Submission Checklist</h2>
+            </div>
+          </div>
+
+          <div class="checklist-list">
+            <label class="checklist-item">
+              <input type="checkbox" checked disabled />
+              <span>Entity section started</span>
+            </label>
+
+            <label class="checklist-item">
+              <input type="checkbox" checked disabled />
+              <span>Director / UBO profile added</span>
+            </label>
+
+            <label class="checklist-item">
+              <input type="checkbox" />
+              <span>All required documents uploaded</span>
+            </label>
+
+            <label class="checklist-item">
+              <input type="checkbox" />
+              <span>All AI warnings reviewed</span>
+            </label>
+
+            <label class="checklist-item">
+              <input type="checkbox" />
+              <span>Final declaration accepted</span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- FINAL DECLARATION -->
+      <section class="content-card">
+        <div class="card-header">
+          <div>
+            <h2>✍️ Final Submission Declaration</h2>
+            <p>Confirm the authenticity and validity of all submitted information</p>
+          </div>
+        </div>
+
+        <div class="declaration-box">
+          <label class="checkbox-row declaration-row">
+            <input type="checkbox" required />
+            <span>
+              I confirm that all documents uploaded are authentic, unaltered, and belong
+              to the declared entity or individuals.
+            </span>
+          </label>
+
+          <label class="checkbox-row declaration-row">
+            <input type="checkbox" required />
+            <span>
+              I understand that submitting fraudulent, forged, or misleading documents is a
+              criminal offence under Mauritius law.
+            </span>
+          </label>
+
+          <label class="checkbox-row declaration-row">
+            <input type="checkbox" required />
+            <span>
+              I authorise Onboarda Ltd to verify the authenticity of all submitted documents
+              with relevant authorities and third-party verification providers.
+            </span>
+          </label>
+        </div>
+
+        <div class="card-actions">
+          <a href="./dashboard.html" class="btn btn-secondary">Save Progress</a>
+          <a href="./risk-result.html" class="btn btn-primary">🔒 Submit Documents for Review</a>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</body>
+</html>
