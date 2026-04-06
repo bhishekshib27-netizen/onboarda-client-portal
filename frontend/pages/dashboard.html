@@ -1,1 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Onboarda — Dashboard</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/portal.css" />
+</head>
+<body class="portal-body">
+  <div class="portal-layout">
+    <aside class="portal-sidebar">
+      <a href="./index.html" class="brand brand-light sidebar-brand">
+        <div class="brand-mark">O</div>
+        <div class="brand-text">
+          <span class="brand-name">Onboarda</span>
+          <span class="brand-sub">Client Onboarding Portal</span>
+        </div>
+      </a>
 
+      <div class="sidebar-group">
+        <span class="sidebar-label">Navigation</span>
+        <nav class="sidebar-nav">
+          <a href="./dashboard.html" class="sidebar-link active">🏠 Dashboard</a>
+          <a href="./documents.html" class="sidebar-link">📄 FinRisk Insights KYC</a>
+        </nav>
+      </div>
+
+      <div class="sidebar-group">
+        <span class="sidebar-label">My Applications</span>
+        <nav class="sidebar-nav">
+          <a href="./signup.html" class="sidebar-link">➕ New Application</a>
+          <a href="./dashboard.html" class="sidebar-link">🔍 Track by Reference</a>
+        </nav>
+      </div>
+
+      <div class="sidebar-group">
+        <span class="sidebar-label">Account</span>
+        <nav class="sidebar-nav">
+          <a href="./dashboard.html" class="sidebar-link">🔐 Security</a>
+          <a href="./index.html" class="sidebar-link">↩ Sign Out</a>
+        </nav>
+      </div>
+    </aside>
+
+    <main class="portal-main">
+      <header class="portal-header">
+        <div>
+          <p class="portal-welcome">Welcome back,</p>
+          <h1>bhishekshib27@gmail.com 👋</h1>
+          <p class="portal-subtext">Here’s your onboarding overview.</p>
+        </div>
+
+        <div class="portal-header-actions">
+          <a href="./dashboard.html" class="btn btn-secondary btn-sm">All Applications</a>
+          <a href="./dashboard.html" class="btn btn-primary btn-sm">Track by reference →</a>
+        </div>
+      </header>
+
+      <section class="stats-grid">
+        <article class="stat-card">
+          <span class="stat-label">Total Applications</span>
+          <strong class="stat-value">1</strong>
+          <small>Since Jan 2026</small>
+        </article>
+
+        <article class="stat-card">
+          <span class="stat-label">In Progress</span>
+          <strong class="stat-value">0</strong>
+          <small>Awaiting review or docs</small>
+        </article>
+
+        <article class="stat-card">
+          <span class="stat-label">Approved</span>
+          <strong class="stat-value">0</strong>
+          <small>Account active</small>
+        </article>
+
+        <article class="stat-card highlight">
+          <span class="stat-label">AI Review Status</span>
+          <strong class="stat-value">Pending</strong>
+          <small>2 checks need analyst confirmation</small>
+        </article>
+      </section>
+
+      <section class="quick-actions-grid">
+        <a href="./documents.html" class="action-card">
+          <div class="action-icon">▶️</div>
+          <div>
+            <h3>Resume Application</h3>
+            <p>Continue KYC and document submission for your active case.</p>
+          </div>
+          <span class="action-arrow">→</span>
+        </a>
+
+        <a href="./signup.html" class="action-card">
+          <div class="action-icon">➕</div>
+          <div>
+            <h3>Start New Application</h3>
+            <p>Open another corporate account request in a guided flow.</p>
+          </div>
+          <span class="action-arrow">→</span>
+        </a>
+      </section>
+
+      <section class="content-grid">
+        <div class="content-card large-card">
+          <div class="card-header">
+            <div>
+              <span class="eyebrow">Active file</span>
+              <h2>FinRisk Insights · Awaiting action</h2>
+            </div>
+            <span class="status-chip warning">KYC Documents Required</span>
+          </div>
+
+          <div class="application-summary-grid">
+            <div class="summary-box">
+              <span class="summary-label">Reference</span>
+              <strong>ARF-2026-100426</strong>
+            </div>
+
+            <div class="summary-box">
+              <span class="summary-label">Company</span>
+              <strong>FinRisk Insights</strong>
+            </div>
+
+            <div class="summary-box">
+              <span class="summary-label">Current Stage</span>
+              <strong>KYC Documents</strong>
+            </div>
+
+            <div class="summary-box">
+              <span class="summary-label">Risk</span>
+              <strong class="text-success">Low</strong>
+            </div>
+          </div>
+
+          <div class="progress-card">
+            <div class="progress-top">
+              <span>Overall Completion</span>
+              <strong>68%</strong>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 68%;"></div>
+            </div>
+            <div class="stepper-row">
+              <div class="step-item done">
+                <span class="step-bullet">✓</span>
+                <span>Pre-Screening</span>
+              </div>
+              <div class="step-item done">
+                <span class="step-bullet">✓</span>
+                <span>Risk Profiling</span>
+              </div>
+              <div class="step-item active">
+                <span class="step-bullet">3</span>
+                <span>KYC & Documents</span>
+              </div>
+              <div class="step-item">
+                <span class="step-bullet">4</span>
+                <span>Approved</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-alerts">
+            <div class="review-alert">
+              <span class="alert-dot yellow"></span>
+              <div>
+                <strong>2 document checks pending</strong>
+                <p>One proof of address and one ownership match require manual review.</p>
+              </div>
+            </div>
+
+            <div class="review-alert">
+              <span class="alert-dot green"></span>
+              <div>
+                <strong>Registry data matched</strong>
+                <p>Entity name and company registration details aligned successfully.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-actions">
+            <a href="./documents.html" class="btn btn-primary">Open Application</a>
+            <a href="./risk-result.html" class="btn btn-secondary">View Risk Result</a>
+          </div>
+        </div>
+
+        <div class="content-card side-card">
+          <div class="card-header">
+            <div>
+              <span class="eyebrow">Recent activity</span>
+              <h2>Latest updates</h2>
+            </div>
+          </div>
+
+          <div class="activity-list">
+            <div class="activity-item">
+              <div class="activity-icon">📧</div>
+              <div>
+                <strong>KYC documents requested</strong>
+                <p>FinRisk Insights</p>
+                <small>6 Apr</small>
+              </div>
+            </div>
+
+            <div class="activity-item">
+              <div class="activity-icon">🤖</div>
+              <div>
+                <strong>AI classified 8 uploaded files</strong>
+                <p>6 verified, 2 routed for analyst review</p>
+                <small>6 Apr</small>
+              </div>
+            </div>
+
+            <div class="activity-item">
+              <div class="activity-icon">🛡️</div>
+              <div>
+                <strong>Pre-screening completed</strong>
+                <p>Low-risk preliminary profile generated</p>
+                <small>6 Apr</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-grid lower-grid">
+        <div class="content-card">
+          <div class="card-header">
+            <div>
+              <span class="eyebrow">Portfolio</span>
+              <h2>Applications</h2>
+            </div>
+          </div>
+
+          <div class="table-shell">
+            <table class="portal-table">
+              <thead>
+                <tr>
+                  <th>Company</th>
+                  <th>Reference</th>
+                  <th>Stage</th>
+                  <th>Progress</th>
+                  <th>Risk</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>FinRisk Insights</td>
+                  <td>ARF-2026-100426</td>
+                  <td>KYC Documents Required</td>
+                  <td>68%</td>
+                  <td><span class="status-chip success">Low</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <div class="card-header">
+            <div>
+              <span class="eyebrow">AI signals</span>
+              <h2>Verification engine</h2>
+            </div>
+          </div>
+
+          <div class="signal-list">
+            <div class="signal-item">
+              <div>
+                <strong>Certificate of Incorporation</strong>
+                <p>Detected and accepted</p>
+              </div>
+              <span class="status-chip success">98%</span>
+            </div>
+
+            <div class="signal-item">
+              <div>
+                <strong>Director ID</strong>
+                <p>Readable and extracted</p>
+              </div>
+              <span class="status-chip success">95%</span>
+            </div>
+
+            <div class="signal-item">
+              <div>
+                <strong>Proof of Address</strong>
+                <p>Address mismatch detected</p>
+              </div>
+              <span class="status-chip warning">Review</span>
+            </div>
+
+            <div class="signal-item">
+              <div>
+                <strong>Ownership Structure</strong>
+                <p>Cross-check incomplete</p>
+              </div>
+              <span class="status-chip muted">Pending</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
