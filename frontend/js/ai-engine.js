@@ -164,8 +164,15 @@ document.addEventListener("DOMContentLoaded", () => {
     refreshSubmitState();
   }
 
-  updateHeaderProgress();
-  renderSignalList();
-  updateChecklist();
-  attachDeclarationHandlers();
-});
+    function refreshAll() {
+    updateHeaderProgress();
+    renderSignalList();
+    updateChecklist();
+    attachDeclarationHandlers();
+  }
+
+  refreshAll();
+
+  document.addEventListener("onboarda:documentsUpdated", () => {
+    refreshAll();
+  });
