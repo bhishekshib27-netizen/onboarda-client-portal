@@ -524,9 +524,22 @@
   color: #64748b;
   font-size: 12px;
 }
+
+
 /* =========================
    UPLOAD / DOCUMENTS
 ========================= */
+.uploaded-file-list {
+  display: grid;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.uploaded-file-name {
+  color: #94a3b8;
+  font-size: 12px;
+  word-break: break-word;
+}
 .upload-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
