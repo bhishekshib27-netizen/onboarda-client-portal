@@ -1,1 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Onboarda — Risk Assessment Result</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/portal.css" />
+</head>
 
+<body class="portal-body">
+  <div class="portal-layout">
+
+    <aside class="portal-sidebar">
+      <a href="./index.html" class="brand brand-light sidebar-brand">
+        <div class="brand-mark">O</div>
+        <div class="brand-text">
+          <span class="brand-name">Onboarda</span>
+          <span class="brand-sub">Client Onboarding Portal</span>
+        </div>
+      </a>
+
+      <div class="sidebar-group">
+        <span class="sidebar-label">Navigation</span>
+        <nav class="sidebar-nav">
+          <a href="./dashboard.html" class="sidebar-link">🏠 Dashboard</a>
+          <a href="./documents.html" class="sidebar-link">📄 FinRisk Insights KYC</a>
+          <a href="./risk-result.html" class="sidebar-link active">📊 Risk Result</a>
+        </nav>
+      </div>
+
+      <div class="sidebar-group">
+        <span class="sidebar-label">My Applications</span>
+        <nav class="sidebar-nav">
+          <a href="./signup.html" class="sidebar-link">➕ New Application</a>
+          <a href="./dashboard.html" class="sidebar-link">🔍 Track by Reference</a>
+        </nav>
+      </div>
+
+      <div class="sidebar-group">
+        <span class="sidebar-label">Account</span>
+        <nav class="sidebar-nav">
+          <a href="#" class="sidebar-link">🔐 Security</a>
+          <a href="./index.html" class="sidebar-link">↩ Sign Out</a>
+        </nav>
+      </div>
+    </aside>
+
+    <main class="portal-main">
+      <header class="portal-header">
+        <div>
+          <p class="portal-welcome">Your Risk Assessment Result</p>
+          <h1>Low Risk</h1>
+          <p class="portal-subtext">
+            Composite score: <strong>28.7 / 100</strong> based on your preliminary onboarding profile.
+          </p>
+        </div>
+
+        <div class="portal-header-actions">
+          <a href="./documents.html" class="btn btn-secondary btn-sm">← Back to Documents</a>
+          <a href="./dashboard.html" class="btn btn-primary btn-sm">Go to Dashboard</a>
+        </div>
+      </header>
+
+      <section class="progress-card">
+        <div class="progress-top">
+          <span>Onboarding Stage</span>
+          <strong>Step 3 of 4</strong>
+        </div>
+
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 82%;"></div>
+        </div>
+
+        <div class="stepper-row">
+          <div class="step-item done">
+            <span class="step-bullet">✓</span>
+            <span>Pre-Screening</span>
+          </div>
+          <div class="step-item done">
+            <span class="step-bullet">✓</span>
+            <span>Risk Profiling</span>
+          </div>
+          <div class="step-item active">
+            <span class="step-bullet">3</span>
+            <span>KYC & Documents</span>
+          </div>
+          <div class="step-item">
+            <span class="step-bullet">4</span>
+            <span>Approved</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats-grid">
+        <article class="stat-card highlight">
+          <span class="stat-label">Risk Profile</span>
+          <strong class="stat-value">LOW</strong>
+          <small>Preliminary onboarding classification</small>
+        </article>
+
+        <article class="stat-card">
+          <span class="stat-label">Composite Score</span>
+          <strong class="stat-value">28.7</strong>
+          <small>Out of 100</small>
+        </article>
+
+        <article class="stat-card">
+          <span class="stat-label">Entity Match</span>
+          <strong class="stat-value">Verified</strong>
+          <small>Registry alignment successful</small>
+        </article>
+
+        <article class="stat-card">
+          <span class="stat-label">Review Status</span>
+          <strong class="stat-value">Pending Final Review</strong>
+          <small>Subject to final compliance checks</small>
+        </article>
+      </section>
+
+      <section class="content-grid">
+        <div class="content-card large-card">
+          <div class="card-header">
+            <div>
+              <span class="eyebrow">Pricing Schedule</span>
+              <h2>Corporate Account — Standard</h2>
+              <p>Based on the preliminary risk profile of your application.</p>
+            </div>
+            <span class="status-chip success">Low Risk Tier</span>
+          </div>
+
+          <div class="table-shell">
+            <table class="portal-table">
+              <thead>
+                <tr>
+                  <th>Fee Type</th>
+                  <th>Description</th>
+                  <th>Amount (USD)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Onboarding Fee</td>
+                  <td>One-time account setup, compliance screening, and due diligence</td>
+                  <td>$ 1,500.00</td>
+                </tr>
+                <tr>
+                  <td>Monthly Account Fee</td>
+                  <td>Recurring monthly fee for account maintenance and compliance monitoring</td>
+                  <td>$ 100.00</td>
+                </tr>
+                <tr>
+                  <td>Transaction Fee</td>
+                  <td>Per-transaction processing fee for domestic and international payments</td>
+                  <td>$ 30.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="info-banner" style="margin-top: 18px;">
+            <p>
+              ⚠️ <strong>Important Notice:</strong> The pricing above is based on the preliminary
+              risk assessment of your application. Onboarda reserves the right to revise the
+              applicable pricing upon completion of the final compliance review and enhanced due
+              diligence process.
+            </p>
+          </div>
+
+          <div class="review-alerts">
+            <div class="review-alert">
+              <span class="alert-dot green"></span>
+              <div>
+                <strong>Low-risk profile identified</strong>
+                <p>Entity structure and initial review produced a low-risk preliminary outcome.</p>
+              </div>
+            </div>
+
+            <div class="review-alert">
+              <span class="alert-dot yellow"></span>
+              <div>
+                <strong>Final compliance review still required</strong>
+                <p>Changes in business activity, documentation quality, or regulatory status may affect final pricing.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-card side-card">
+          <div class="card-header">
+            <div>
+              <span class="eyebrow">AI Risk Drivers</span>
+              <h2>Assessment Summary</h2>
+            </div>
+          </div>
+
+          <div class="signal-list">
+            <div class="signal-item">
+              <div>
+                <strong>Entity verification</strong>
+                <p>Company name and registry details matched</p>
+              </div>
+              <span class="status-chip success">Clear</span>
+            </div>
+
+            <div class="signal-item">
+              <div>
+                <strong>Ownership review</strong>
+                <p>Simple ownership profile with no high-risk layering detected</p>
+              </div>
+              <span class="status-chip success">Low</span>
+            </div>
+
+            <div class="signal-item">
+              <div>
+                <strong>Document checks</strong>
+                <p>Most uploaded files validated successfully</p>
+              </div>
+              <span class="status-chip warning">2 Reviews</span>
+            </div>
+
+            <div class="signal-item">
+              <div>
+                <strong>Screening outcome</strong>
+                <p>No material screening issues identified at pre-screening stage</p>
+              </div>
+              <span class="status-chip success">Clear</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-grid lower-grid">
+        <div class="content-card">
+          <div class="card-header">
+            <div>
+              <span class="eyebrow">Terms & Conditions</span>
+              <h2>Pricing Acceptance</h2>
+              <p>Please review and confirm the pricing schedule before proceeding.</p>
+            </div>
+          </div>
+
+          <div class="declaration-box">
+            <label class="checkbox-row declaration-row">
+              <input type="checkbox" id="acceptTerms" />
+              <span>
+                I accept the Terms & Conditions and acknowledge that the fee schedule above
+                is based on a preliminary risk assessment.
+              </span>
+            </label>
+
+            <label class="checkbox-row declaration-row">
+              <input type="checkbox" id="acceptRevision" />
+              <span>
+                I understand that pricing may be revised following final compliance review,
+                enhanced due diligence, or changes in the entity’s risk profile.
+              </span>
+            </label>
+
+            <label class="checkbox-row declaration-row">
+              <input type="checkbox" id="acceptAuthority" />
+              <span>
+                I confirm that I am duly authorised to enter into this arrangement on behalf
+                of the entity.
+              </span>
+            </label>
+          </div>
+
+          <div class="card-actions">
+            <a href="./documents.html" class="btn btn-secondary">Review Documents</a>
+            <a href="./dashboard.html" class="btn btn-primary" id="acceptPricingBtn">Accept Pricing & Proceed →</a>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <div class="card-header">
+            <div>
+              <span class="eyebrow">Application Snapshot</span>
+              <h2>Reference Summary</h2>
+            </div>
+          </div>
+
+          <div class="application-summary-grid" style="grid-template-columns: 1fr 1fr;">
+            <div class="summary-box">
+              <span class="summary-label">Reference</span>
+              <strong>ARF-2026-100426</strong>
+            </div>
+
+            <div class="summary-box">
+              <span class="summary-label">Company</span>
+              <strong>FinRisk Insights</strong>
+            </div>
+
+            <div class="summary-box">
+              <span class="summary-label">Applicant</span>
+              <strong>bhishekshib27@gmail.com</strong>
+            </div>
+
+            <div class="summary-box">
+              <span class="summary-label">Current Status</span>
+              <strong class="text-success">Awaiting Acceptance</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const checks = [
+        document.getElementById("acceptTerms"),
+        document.getElementById("acceptRevision"),
+        document.getElementById("acceptAuthority")
+      ];
+
+      const button = document.getElementById("acceptPricingBtn");
+
+      function refreshButton() {
+        const allChecked = checks.every((check) => check && check.checked);
+        button.style.opacity = allChecked ? "1" : "0.6";
+        button.style.pointerEvents = allChecked ? "auto" : "none";
+      }
+
+      checks.forEach((check) => {
+        if (check) check.addEventListener("change", refreshButton);
+      });
+
+      refreshButton();
+    });
+  </script>
+</body>
+</html>
