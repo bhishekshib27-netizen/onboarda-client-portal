@@ -1,1 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Onboarda — Create Account</title>
+  <link rel="stylesheet" href="../css/main.css" />
+</head>
+<body class="auth-body">
+  <div class="auth-shell">
+    <div class="auth-panel auth-left">
+      <a href="./index.html" class="brand brand-light">
+        <div class="brand-mark">O</div>
+        <div class="brand-text">
+          <span class="brand-name">Onboarda</span>
+          <span class="brand-sub">Client Onboarding Portal</span>
+        </div>
+      </a>
 
+      <div class="auth-copy">
+        <span class="eyebrow light">Open your account</span>
+        <h1>Create your account</h1>
+        <p>
+          Open a corporate account with Onboarda — the regulated payments
+          platform built for international SMEs and compliance-led onboarding.
+        </p>
+
+        <div class="auth-benefits">
+          <div class="auth-benefit">
+            <span>🔐</span>
+            <div>
+              <strong>Secure access</strong>
+              <p>Protected client onboarding and document management</p>
+            </div>
+          </div>
+
+          <div class="auth-benefit">
+            <span>📄</span>
+            <div>
+              <strong>Structured KYC flow</strong>
+              <p>Entity, director, and UBO data in one guided process</p>
+            </div>
+          </div>
+
+          <div class="auth-benefit">
+            <span>🤖</span>
+            <div>
+              <strong>AI-assisted checks</strong>
+              <p>Faster review with smart verification signals</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="auth-panel auth-right">
+      <div class="auth-form-card">
+        <div class="form-header">
+          <span class="eyebrow">Get started</span>
+          <h2>Create your account</h2>
+          <p>Complete the details below to start onboarding.</p>
+        </div>
+
+        <form class="auth-form" action="./dashboard.html">
+          <div class="form-row two-col">
+            <div class="form-group">
+              <label for="firstName">First Name *</label>
+              <input type="text" id="firstName" name="firstName" placeholder="Bhishek" required />
+            </div>
+
+            <div class="form-group">
+              <label for="lastName">Last Name *</label>
+              <input type="text" id="lastName" name="lastName" placeholder="Shibdeen" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="workEmail">Work Email Address *</label>
+            <input type="email" id="workEmail" name="workEmail" placeholder="bhishekshib27@gmail.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="mobile">Mobile Number *</label>
+            <input type="tel" id="mobile" name="mobile" placeholder="+230 55024085" required />
+          </div>
+
+          <div class="form-row two-col">
+            <div class="form-group">
+              <label for="password">Password *</label>
+              <input type="password" id="password" name="password" placeholder="Enter password" required />
+            </div>
+
+            <div class="form-group">
+              <label for="confirmPassword">Confirm Password *</label>
+              <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" required />
+            </div>
+          </div>
+
+          <div class="password-rules">
+            <span class="rule ok">✅ 12+ characters</span>
+            <span class="rule ok">✅ Uppercase letter</span>
+            <span class="rule ok">✅ Lowercase letter</span>
+            <span class="rule ok">✅ Number</span>
+            <span class="rule ok">✅ Special character</span>
+          </div>
+
+          <label class="checkbox-row">
+            <input type="checkbox" required />
+            <span>
+              I agree to Onboarda's Terms of Service and Privacy Policy, and
+              consent to the processing of my personal data for account
+              onboarding purposes.
+            </span>
+          </label>
+
+          <button type="submit" class="btn btn-primary btn-block btn-lg">
+            🚀 Create Account & Start Onboarding
+          </button>
+
+          <p class="form-footer-text">
+            Already have an account?
+            <a href="./index.html">Sign in</a>
+          </p>
+        </form>
+
+        <div class="legal-note">
+          <p>Onboarda Ltd is licensed by the Financial Services Commission of Mauritius.</p>
+          <p>Your data is encrypted and processed under the Data Protection Act 2017.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
