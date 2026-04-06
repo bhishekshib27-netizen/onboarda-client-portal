@@ -32,7 +32,10 @@ document.addEventListener("DOMContentLoaded", () => {
       clean.includes("certificate") ||
       clean.includes("incorporation") ||
       clean.includes("passport") ||
-      clean.includes("id")
+      clean.includes("nationalid") ||
+      clean.includes("governmentid") ||
+      clean.includes("memorandum") ||
+      clean.includes("directorregister")
     ) {
       return { status: "verified", confidence: 95 };
     }
@@ -41,7 +44,9 @@ document.addEventListener("DOMContentLoaded", () => {
       clean.includes("address") ||
       clean.includes("utility") ||
       clean.includes("shareholder") ||
-      clean.includes("ownership")
+      clean.includes("ownership") ||
+      clean.includes("structure") ||
+      clean.includes("boardresolution")
     ) {
       return { status: "review", confidence: 74 };
     }
@@ -49,7 +54,63 @@ document.addEventListener("DOMContentLoaded", () => {
     return { status: "pending", confidence: 60 };
   }
 
-  function updateUploadCard(card, file, result) {
+  function evaluateFiles(files) {
+    if (!files.length) {
+      return { status: "pending", confidence: 0 };
+    }
+
+    const results = files.map((file) => detectStatusFromName(file.name));
+
+    const hasReview = results.some((item) => item.status === "review");
+    const hasPending = results.some((item) => item.status === "pending");
+    const averageConfidence = Math.round(
+      results.reduce((sum, item) => sum + item.confidence, 0) / results.length
+    );
+
+    if (hasReview) {
+      return { status: "review", confidence: averageConfidence };
+    }
+
+    if (hasPending) {
+      return { status: "pending", confidence: averageConfidence };
+    }
+
+    return { status: "verified", confidence: averageConfidence };
+  }
+
+  function getOrCreateFileList(card) {
+    let fileList = card.querySelector(".uploaded-file-list");
+
+    if (!fileList) {
+      fileList = document.createElement("div");
+      fileList.className = "uploaded-file-list";
+      card.appendChild(fileList);
+    }
+
+    return fileList;
+  }
+
+  function renderUploadedFiles(card, files) {
+    const fileList = getOrCreateFileList(card);
+    fileList.innerHTML = "";
+
+    if (!files.length) {
+      const empty = document.createElement("small");
+      empty.className = "uploaded-file-name";
+      empty.textContent = "No files uploaded yet";
+      fileList.appendChild(empty);
+      return;
+    }
+
+    files.forEach((fileName, index) => {
+      const item = document.createElement("small");
+      item.className = "uploaded-file-name";
+      item.textContent = `${index + 1}. ${fileName}`;
+      fileList.appendChild(item);
+    });
+  }
+
+  function updateUploadCard(card, files, result) {
     let statusEl = card.querySelector(".ai-status");
 
     if (!statusEl) {
@@ -68,19 +129,35 @@ document.addEventListener("DOMContentLoaded", () => {
       statusEl.textContent = `⚠ Needs review · ${result.confidence}%`;
     } else {
       statusEl.classList.add("pending");
-      statusEl.textContent = `Pending · ${result.confidence}%`;
+      statusEl.textContent = result.confidence
+        ? `Pending · ${result.confidence}%`
+        : "Pending";
     }
 
-    let fileLabel = card.querySelector(".uploaded-file-name");
-    if (!fileLabel) {
-      fileLabel = document.createElement("small");
-      fileLabel.className = "uploaded-file-name";
-      fileLabel.style.color = "#94a3b8";
-      fileLabel.style.marginTop = "4px";
-      card.appendChild(fileLabel);
-    }
+    renderUploadedFiles(card, files.map((file) => file.name || file));
+  }
 
-    fileLabel.textContent = `Uploaded: ${file.name}`;
+  function syncStoredFilesToUI() {
+    const app = getApplication();
+    if (!app) return;
+
+    const inputs = document.querySelectorAll('.upload-card input[type="file"]');
+
+    inputs.forEach((input, index) => {
+      const fieldKey = documentFieldMap[index] || "additional";
+      const doc = app.documents?.[fieldKey];
+      const card = input.closest(".upload-card");
+
+      if (!card || !doc) return;
+
+      const storedFiles = Array.isArray(doc.files) ? doc.files : [];
+      const result = {
+        status: doc.status || "pending",
+        confidence: doc.confidence || 0
+      };
+
+      updateUploadCard(card, storedFiles, result);
+    });
   }
 
   function attachUploadHandlers() {
@@ -90,28 +167,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
     inputs.forEach((input, index) => {
       input.addEventListener("change", (event) => {
-        const file = event.target.files?.[0];
-        if (!file) return;
+        const selectedFiles = Array.from(event.target.files || []);
+        if (!selectedFiles.length) return;
 
         const fieldKey = documentFieldMap[index] || "additional";
-        const result = detectStatusFromName(file.name);
+        const card = input.closest(".upload-card");
+        const result = evaluateFiles(selectedFiles);
 
         if (!app.documents[fieldKey]) {
           app.documents[fieldKey] = {};
         }
 
+        const existingFiles = Array.isArray(app.documents[fieldKey].files)
+          ? app.documents[fieldKey].files
+          : [];
+
+        const newFiles = selectedFiles.map((file) => ({
+          name: file.name,
+          size: file.size,
+          type: file.type
+        }));
+
+        const mergedFiles = [...existingFiles, ...newFiles];
+
         app.documents[fieldKey] = {
           uploaded: true,
           status: result.status,
           confidence: result.confidence,
-          fileName: file.name
+          fileName: mergedFiles[0]?.name || "",
+          files: mergedFiles
         };
 
         saveApplication(app);
-        updateUploadCard(input.closest(".upload-card"), file, result);
+        updateUploadCard(card, mergedFiles, result);
+
+        document.dispatchEvent(new CustomEvent("onboarda:documentsUpdated"));
       });
     });
   }
 
   attachUploadHandlers();
+  syncStoredFilesToUI();
 });
