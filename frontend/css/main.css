@@ -1,1 +1,394 @@
+/* ========================
+   RESET & BASE
+======================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  color: #0f172a;
+  background: #0b0f19;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ========================
+   BRAND
+======================== */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-weight: 700;
+}
+
+.brand-sub {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* ========================
+   HEADER
+======================== */
+.site-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+}
+
+.top-nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.top-nav a {
+  color: #cbd5f5;
+  font-size: 14px;
+}
+
+/* ========================
+   BUTTONS
+======================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #6366f1, #7c3aed);
+  color: white;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  background: #1e293b;
+  color: #e2e8f0;
+}
+
+.btn-ghost {
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.btn-lg {
+  padding: 14px 22px;
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* ========================
+   HERO
+======================== */
+.hero-section {
+  padding: 80px 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-copy h1 {
+  font-size: 48px;
+  margin: 20px 0;
+}
+
+.hero-text {
+  color: #94a3b8;
+  margin-bottom: 24px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.hero-metrics {
+  display: flex;
+  gap: 16px;
+}
+
+.metric-card {
+  background: #111827;
+  padding: 14px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.metric-value {
+  font-weight: 700;
+}
+
+.metric-label {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* ========================
+   PANEL
+======================== */
+.glass-card {
+  background: rgba(255,255,255,0.03);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.panel-step {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.step-dot {
+  width: 10px;
+  height: 10px;
+  background: #4f46e5;
+  border-radius: 50%;
+}
+
+/* ========================
+   SECTIONS
+======================== */
+.section {
+  padding: 80px 0;
+}
+
+.section-heading {
+  margin-bottom: 40px;
+}
+
+.section-heading h2 {
+  font-size: 32px;
+}
+
+.section-heading p {
+  color: #94a3b8;
+}
+
+/* ========================
+   FEATURES
+======================== */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.feature-card {
+  background: #111827;
+  padding: 24px;
+  border-radius: 12px;
+}
+
+.feature-icon {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* ========================
+   TIMELINE
+======================== */
+.timeline-item {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.timeline-number {
+  font-weight: bold;
+  color: #6366f1;
+}
+
+/* ========================
+   CTA
+======================== */
+.cta-section {
+  padding: 60px 0;
+}
+
+.cta-card {
+  background: #111827;
+  padding: 40px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ========================
+   FOOTER
+======================== */
+.site-footer {
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding: 40px 0;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-links {
+  display: flex;
+  gap: 16px;
+}
+
+/* ========================
+   AUTH PAGES
+======================== */
+.auth-body {
+  background: #0b0f19;
+}
+
+.auth-shell {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+.auth-panel {
+  padding: 60px;
+}
+
+.auth-left {
+  background: linear-gradient(135deg, #0f172a, #020617);
+}
+
+.auth-copy h1 {
+  font-size: 40px;
+  margin: 16px 0;
+}
+
+.auth-benefit {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.auth-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-form-card {
+  width: 100%;
+  max-width: 420px;
+  background: #111827;
+  padding: 32px;
+  border-radius: 14px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #020617;
+  color: white;
+}
+
+.form-row.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.password-rules {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-bottom: 16px;
+}
+
+.checkbox-row {
+  display: flex;
+  gap: 10px;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.form-footer-text {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.legal-note {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* ========================
+   UTILITIES
+======================== */
+.eyebrow {
+  font-size: 12px;
+  color: #6366f1;
+  text-transform: uppercase;
+}
+
+.light {
+  color: #94a3b8;
+}
